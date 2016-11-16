@@ -148,8 +148,8 @@ a:active {
   img {
     height: 100%;
     width: 100%;
-    max-width: 380px;
-    max-height: 380px;
+    max-width: 373px;
+    max-height: 373px;
   }
 }
 
@@ -157,7 +157,9 @@ a:active {
 
 .bridge {
   background-image: url("../img/bridge/full-width.jpg");
+  background-size: cover;
   width: 100%;
+  margin: auto;
   }
 
 /***CONTACT SECTION***/
