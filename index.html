@@ -2,18 +2,37 @@
 <html>
   <head>
     <title>Moon River Drifter</title>
+    <!--Latest JQuery Library-->
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--JQuery Document-->
+    <script src="./scripts/app.js"></script>
     <!--Roboto font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--External Stylesheet-->
     <link rel="stylesheet" type="text/css" href="./styles/main.css" />
   </head>
-  <body>
+  <body class="js-menu-close">
     <div class="container">
+      <div id="sidebar-wrapper" class="js-menu-open">
+        <div id="close-btn" class="js-menu-close">
+          <img src="img/icons/x.svg" />
+        </div>
+        <h2>Curtis</h2>
+        <h2>Long</h2>
+        <div class="sidebar-links">
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
       <div id="intro" class="col-xs-12 hero landscape">
+        <div id="hamburger" class="js-menu-open">
+          <img src="img/icons/menu.svg" />
+        </div>
         <h1>Curtis Long</h1>
         <h5>Freelance Photographer</h5>
         <a href="#gallery"><button type="button" class="cta">Gallery</button></a>
