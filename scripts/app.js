@@ -17,4 +17,71 @@ $(document).ready(function(){
       return false;
     })
 
+    //wunderground API key: fd971b41a003c8ba
+    //API request URL: http://api.wunderground.com/api/fd971b41a003c8ba/geolookup/conditions/q/90401.json
+    // getWeather();
+    // function getWeather() {
+    //     $.ajax(
+    //       {
+    //         URL: "http://api.wunderground.com/api/fd971b41a003c8ba/geolookup/conditions/q/90401.json",
+    //         dataType: "jsonp",
+    //         success: function(response) {
+    //           var conditions = response.current_observation.weather;
+    //         }
+    //       }
+    //     )
+    // }
+    var conditions = '';
+
+    $.ajax({
+        type: "GET",
+        url: "http://api.wunderground.com/api/fd971b41a003c8ba/geolookup/conditions/q/90401.json",
+        dataType: "jsonp",
+        success: function(data) {
+          conditions = data.current_observation.weather;
+          loadImage(conditions);
+          }
+      })
+
+
+    // var wundergroundURL = 'http://api.wunderground.com/api/fd971b41a003c8ba/geolookup/conditions/q/90401.json'
+    // var request = new XMLHttpRequest();
+    // request.open('GET',wundergroundURL);
+    // request.onload = function(){
+    //   var data = JSON.parse(request.responseText);
+    //   //console.log(data);
+    //   conditions = data.current_observation.weather;
+    //   console.log(conditions);
+    // }
+    // request.send();
+
+    function getTimeOfDay() {
+      var time = new Date();
+      var hours = time.getHours();
+      var timeOfDay = '';
+      if (hours >= 17) {
+        timeOfDay = 'night';
+      } else if (hours >= 12 && hours < 17) {
+        timeOfDay = 'afternoon';
+      } else {
+        timeOfDay = 'morning';
+      }
+      return timeOfDay;
+    }
+
+
+    function loadImage(conditions) {
+      var imageSRC = "img/weather/hero-";
+      var validConditions = ["clear", "cloudy", "rain", "snow"];
+      var timeOfDay = getTimeOfDay();
+      conditions = conditions.toLowerCase();
+        if (validConditions.indexOf(conditions)==-1){
+          conditions = "cloudy";
+        } else {
+          conditions = validConditions[validConditions.indexOf(conditions)];
+        }
+      var url = imageSRC + conditions + "-" + timeOfDay + ".jpg";
+      $("#intro").css("background-image", "url(" + url + ")");
+    }
+
 })

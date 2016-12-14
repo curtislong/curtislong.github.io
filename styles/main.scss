@@ -44,7 +44,7 @@ a:active {
   border-radius: 4px;
   background-color: black;
   z-index: 1;
-  left: 5%;
+  //left: .5%;
   top: 1%;
   &:hover {
     background-color: $light-blue;
@@ -62,15 +62,19 @@ a:active {
   justify-content: center;
   flex-direction: column;
   position: fixed;
+  top: 1%;
   width: 0px;
-  height: 100%;
+  height: auto;
   padding-top: 10px;
+  padding-bottom: 30px;
   font-family: Roboto, serif;
   color: white;
   background-color: black;
   z-index: 2;
   overflow: hidden;
   transition: all 0.5s ease;
+  border-radius: 0px 5px 5px 0px;
+
 
   &.open {
     width: 320px;
@@ -98,9 +102,12 @@ a:active {
   }
 
   #close-btn {
-  margin: 10px 0px 0px 30px;
+  margin: 20px 0px 0px 30px;
   align-self: flex-start;
+  //position: relative;
   color: white;
+  //left: 1%;
+  //top: 1%;
     &:hover {
       cursor: pointer;
       opacity: .5;
@@ -155,6 +162,7 @@ a:active {
 }
 
 .intro {
+
   h1 {
     line-height: 55px;
     font-size: 72px;

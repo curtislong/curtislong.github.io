@@ -37,7 +37,6 @@ a:active {
   border-radius: 4px;
   background-color: black;
   z-index: 1;
-  left: 5%;
   top: 1%; }
   #hamburger:hover {
     background-color: #00CFFF;
@@ -52,15 +51,18 @@ a:active {
   justify-content: center;
   flex-direction: column;
   position: fixed;
+  top: 1%;
   width: 0px;
-  height: 100%;
+  height: auto;
   padding-top: 10px;
+  padding-bottom: 30px;
   font-family: Roboto, serif;
   color: white;
   background-color: black;
   z-index: 2;
   overflow: hidden;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  border-radius: 0px 5px 5px 0px; }
   #sidebar-wrapper.open {
     width: 320px; }
   #sidebar-wrapper h2 {
@@ -79,7 +81,7 @@ a:active {
     align-items: center;
     justify-content: center; }
   #sidebar-wrapper #close-btn {
-    margin: 10px 0px 0px 30px;
+    margin: 20px 0px 0px 30px;
     align-self: flex-start;
     color: white; }
     #sidebar-wrapper #close-btn:hover {
