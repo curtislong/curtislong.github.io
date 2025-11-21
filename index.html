@@ -1,142 +1,63 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Moon River Drifter</title>
-    <!--Latest JQuery Library-->
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--JQuery Document-->
-    <script src="./scripts/app.js"></script>
-    <!--Roboto font-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <!--External Stylesheet-->
-    <link rel="stylesheet" type="text/css" href="./styles/main.css" />
-  </head>
-  <body class="js-menu-close">
-    <!-- MENU -->
-    <div id="sidebar-wrapper" class="js-menu-open">
+<html lang="en">
 
-      <div id="close-btn" class="js-menu-close">
-        <img src="img/icons/x.svg" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moon River Drifter</title>
+  <!--Roboto font-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+  <!--External Stylesheet-->
+  <link rel="stylesheet" type="text/css" href="./styles/main.css" />
+</head>
+
+<body>
+
+  <!-- Parallax Background Container -->
+  <div class="parallax-bg"></div>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- Intro Card -->
+    <section id="intro" class="content-card">
+      <h1 id="hero-name"></h1>
+      <h5 id="hero-title"></h5>
+    </section>
+
+    <!-- About Card -->
+    <section id="about" class="content-card">
+      <h2 id="about-header"></h2>
+      <h3 id="about-tagline"></h3>
+      <div id="about-description" class="text-content"></div>
+    </section>
+
+    <!-- Gallery Card -->
+    <section id="gallery" class="content-card">
+      <h2 id="gallery-header"></h2>
+      <div id="gallery-grid" class="gallery-grid">
+        <!-- Images injected via JS -->
       </div>
+    </section>
 
-        <h2>Curtis</h2>
-        <h2>Long</h2>
+    <!-- Contact Card -->
+    <section id="contact" class="content-card">
+      <h2 id="contact-header"></h2>
+      <p id="contact-text"></p>
+      <a id="contact-btn" href="" class="cta-button"></a>
+      <div id="social-links" class="social-links"></div>
+    </section>
 
-      <div class="sidebar-links">
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+    <footer id="footer" class="content-card footer-card">
+      <div class="copyright">
+        <span>&#169; <span id="copyright-name"></span></span>
       </div>
+    </footer>
 
-    </div>
+  </main>
 
-    <div id="hamburger" class="js-menu-open">
-      <img src="img/icons/menu.svg" />
-    </div>
-    <!-- MENU -->
-    <!-- <div class="container"> -->
+  <script src="./scripts/content.js"></script>
+  <script src="./scripts/app.js"></script>
+</body>
 
-      <div id="intro" class="col-xs-12 hero landscape">
-        <h1>Curtis Long</h1>
-        <h5>Freelance Photographer</h5>
-        <a href="#gallery"><button type="button" class="cta">Gallery</button></a>
-      </div>
-
-    <div id="about" class="col-xs-12 hero">
-
-      <div class="row">
-        <h2>About Me</h2>
-          <div class="col-xs-6 left-col">
-            <!-- <h2>About Me</h2> -->
-            <h2>I'm a <br> photographer with a passion for travel and adventure</h2>
-          </div>
-          <div class="col-xs-6 right-col">
-            <h5>"<a href='https://en.wikipedia.org/wiki/Moon_River' target='_blank'>Moon River</a>" is an original composition for the screen, written by Henry Mancini and Johnny Mercer for Audrey Hepburn to sing in <em>Breakfast at Tiffany's</em>. Its significance is rooted in Mancini's childhood in the Southern United States. The opening stanza begins, "Moon River, wider than a mile. I'm crossing you in style, someday." I interpret the Moon River as both destiny and adventure. I like to think I'm adrift on the Moon River, letting the current take me to the next adventure. Here are some of my pictures from along the way."</h5>
-          </div>
-      </div>
-
-    </div>
-    <div id="gallery" class="col-xs-12 hero">
-      <h2>Gallery</h2>
-        <div class="row">
-          <div class="col-xs-4">
-            <img src="img/gallery/gallery-01.jpg" />
-          </div>
-          <div class="col-xs-4">
-            <img src="img/gallery/gallery-02.jpg" />
-          </div>
-          <div class="col-xs-4">
-            <img src="img/gallery/gallery-03.jpg" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-4">
-            <img src="img/gallery/gallery-04.jpg" />
-          </div>
-          <div class="col-xs-4">
-            <img src="img/gallery/gallery-05.jpg" />
-          </div>
-          <div class="col-xs-4">
-            <img src="img/gallery/gallery-06.jpg" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-4">
-            <img src="img/gallery/gallery-07.jpg" />
-          </div>
-          <div class="col-xs-4">
-            <img src="img/gallery/gallery-08.jpg" />
-          </div>
-          <div class="col-xs-4">
-            <img src="img/gallery/gallery-09.jpg" />
-          </div>
-        </div>
-    </div>
-    <div class="row bridge hero">
-        <div class="col-xs-12"></div>
-    </div>
-
-    <div id="contact" class="row hero">
-
-        <div class="col-xs-12">
-          <h2>Contact Me</h2>
-          <p>
-            I love to connect with like-minded people&ndash;whether you're a fellow drifter or not, let's chat!<br />
-            <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"><button type="button" class="cta">Contact</button></a>
-          </p>
-        </div>
-
-        <div id="social">
-          <!-- <a href="http://www.twitter.com"><img src="img/icons/twitter.svg"/></a> -->
-          <a href="http://www.instagram.com/curtislong/"><img src="img/icons/instagram.svg"/></a>
-          <!-- <a href="http://www.medium.com"><img src="img/icons/medium.svg"/></a> -->
-        </div>
-    </div>
-
-      <div id="footer">
-        <div class="footer-item">
-          <h4><b>Curtis<br /> Long</b></h4>
-        </div>
-        <div class="footer-item">
-          <a href="#about">About</a>
-        </div>
-        <div class="footer-item">
-          <a href="#gallery">Gallery</a>
-        </div>
-        <a href="#contact">
-          <div class="footer-item">
-          Contact
-          </div>
-        </a>  
-        <div class="copyright">
-          <span>&#169 Curtis Long</span>
-        </div>
-      </div>
-
-    </div>
-  </body>
 </html>

@@ -1,87 +1,69 @@
-$(document).ready(function(){
-  var $menu = $("#sidebar-wrapper");
-    /*Using the three-parameter version of .on() means we're using a technique
-    called "Event delegation". Event delegation means that the event will be
-    handled for all elements which match the selector in the second parameter,
-    regardless of when they are added to the document. We won't use this super
-    power now, but because jQuery projects can get very complicated very
-    quickly, using Event delegation is a best practce.*/
-    $(document).on("click", ".js-menu-open", function() {
-      $menu.addClass("open");
-      return false;
-      /*It should be clear at this point why we used classes, but what about those return false; lines? When you return the value "false" from an event handling function, this prevents jQuery from acting on the event in "ancestor" elements. Notice the <div id="sidebar-wrapper"> tag is a child of the <body> tag. This means that if we didn't stop this "event bubbling" by returning false, both the open and close events would occur when you clicked inside the open sidebar-wrapper element. By adding this simple line, we make sure the sidebar opens when we want it open, and closes when we want it close.*/
-    })
+document.addEventListener('DOMContentLoaded', function () {
 
-    $(document).on("click", ".js-menu-close", function() {
-      $menu.removeClass("open");
-      return false;
-    })
+  // Populate Content from siteContent object (loaded via content.js)
+  if (typeof siteContent !== 'undefined') {
 
-    //wunderground API key: fd971b41a003c8ba
-    //API request URL: http://api.wunderground.com/api/fd971b41a003c8ba/geolookup/conditions/q/90401.json
-    // getWeather();
-    // function getWeather() {
-    //     $.ajax(
-    //       {
-    //         URL: "http://api.wunderground.com/api/fd971b41a003c8ba/geolookup/conditions/q/90401.json",
-    //         dataType: "jsonp",
-    //         success: function(response) {
-    //           var conditions = response.current_observation.weather;
-    //         }
-    //       }
-    //     )
-    // }
-    var conditions = '';
+    // Hero
+    document.getElementById('hero-name').textContent = siteContent.hero.name;
+    document.getElementById('hero-title').textContent = siteContent.hero.title;
 
-    $.ajax({
-        type: "GET",
-        url: "http://api.wunderground.com/api/fd971b41a003c8ba/geolookup/conditions/q/90401.json",
-        dataType: "jsonp",
-        success: function(data) {
-          conditions = data.current_observation.weather;
-          loadImage(conditions);
-          }
-      })
+    // About
+    document.getElementById('about-header').textContent = siteContent.about.header;
+    document.getElementById('about-tagline').innerHTML = siteContent.about.tagline.replace(/\n/g, '<br>');
+    document.getElementById('about-description').innerHTML = siteContent.about.description;
 
+    // Gallery
+    document.getElementById('gallery-header').textContent = siteContent.gallery.header;
+    const galleryGrid = document.getElementById('gallery-grid');
+    siteContent.gallery.images.forEach(imgSrc => {
+      const div = document.createElement('div');
+      div.className = 'gallery-item';
+      const img = document.createElement('img');
+      img.src = imgSrc;
+      img.alt = 'Gallery Image';
+      div.appendChild(img);
+      galleryGrid.appendChild(div);
+    });
 
-    // var wundergroundURL = 'http://api.wunderground.com/api/fd971b41a003c8ba/geolookup/conditions/q/90401.json'
-    // var request = new XMLHttpRequest();
-    // request.open('GET',wundergroundURL);
-    // request.onload = function(){
-    //   var data = JSON.parse(request.responseText);
-    //   //console.log(data);
-    //   conditions = data.current_observation.weather;
-    //   console.log(conditions);
-    // }
-    // request.send();
+    // Contact
+    document.getElementById('contact-header').textContent = siteContent.contact.header;
+    document.getElementById('contact-text').innerHTML = siteContent.contact.text;
 
-    function getTimeOfDay() {
-      var time = new Date();
-      var hours = time.getHours();
-      var timeOfDay = '';
-      if (hours >= 17) {
-        timeOfDay = 'night';
-      } else if (hours >= 12 && hours < 17) {
-        timeOfDay = 'afternoon';
-      } else {
-        timeOfDay = 'morning';
-      }
-      return timeOfDay;
-    }
+    const contactBtn = document.getElementById('contact-btn');
+    contactBtn.textContent = siteContent.contact.cta;
+    contactBtn.href = `mailto:${siteContent.contact.email}?Subject=${encodeURIComponent(siteContent.contact.emailSubject)}`;
 
+    const socialLinks = document.getElementById('social-links');
+    siteContent.contact.social.forEach(social => {
+      const a = document.createElement('a');
+      a.href = social.url;
+      a.target = "_blank";
+      const img = document.createElement('img');
+      img.src = social.icon;
+      img.alt = social.platform;
+      a.appendChild(img);
+      socialLinks.appendChild(a);
+    });
 
-    function loadImage(conditions) {
-      var imageSRC = "img/weather/hero-";
-      var validConditions = ["clear", "cloudy", "rain", "snow"];
-      var timeOfDay = getTimeOfDay();
-      conditions = conditions.toLowerCase();
-        if (validConditions.indexOf(conditions)==-1){
-          conditions = "cloudy";
-        } else {
-          conditions = validConditions[validConditions.indexOf(conditions)];
-        }
-      var url = imageSRC + conditions + "-" + timeOfDay + ".jpg";
-      $("#intro").css("background-image", "url(" + url + ")");
-    }
+    // Footer
+    document.getElementById('copyright-name').textContent = siteContent.footer.copyright;
+  }
 
-})
+  // Parallax Effect
+  const parallaxBg = document.querySelector('.parallax-bg');
+
+  if (parallaxBg) {
+    window.addEventListener('scroll', function () {
+      const scrolled = window.pageYOffset;
+      // Move the background at 15% of the scroll speed (reduced to prevent whitespace)
+      // We also keep the scale(1.2) defined in CSS
+      const rate = 0.15;
+      const yPos = -(scrolled * rate);
+
+      requestAnimationFrame(() => {
+        parallaxBg.style.transform = `translate3d(0, ${yPos}px, 0) scale(1.2)`;
+      });
+    });
+  }
+
+});
