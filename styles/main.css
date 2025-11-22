@@ -157,52 +157,6 @@ p,
   /* Only underline the text */
 }
 
-.interests-section {
-  margin-top: 70px;
-  text-align: left;
-  background: #fafafa;
-  /* Very light grey, almost white */
-  padding: 40px;
-  border: 1px solid #eee;
-  /* Crisp border */
-}
-
-.interests-section h4 {
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #888;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.interests-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.interests-list li {
-  background: white;
-  border: 1px solid #e0e0e0;
-  padding: 8px 16px;
-  border-radius: 2px;
-  /* Less rounded, more "tech/crisp" */
-  font-size: 0.9rem;
-  color: #555;
-  transition: border-color 0.3s;
-}
-
-.interests-list li:hover {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-}
-
 .text-content a {
   color: var(--accent-color);
   border-bottom: 1px solid rgba(160, 82, 45, 0.3);

@@ -27,17 +27,7 @@ const siteContent = {
         <h4>Craft & Making</h4>
         <p>Outside of tech and writing, I’ve been refitting a 1970s yawl and doing the carpentry myself.<br>Undoing fifty seasons of weather and wear reminds me that what’s worth keeping is rarely pristine, only repaired.</p>
       </div>
-
-      <div class="interests-section">
-        <h4>What I’m Interested In</h4>
-        <ul class="interests-list">
-          <li>Tools that help people make things</li>
-          <li>Narrative design and emotional architecture</li>
-          <li>Systems that make difficult things easier</li>
-          <li>Collaboration that feels honest, flawed, and alive</li>
-        </ul>
-      </div>
-`
+    `
   },
   gallery: {
     header: "Visuals & Artifacts",
