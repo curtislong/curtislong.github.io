@@ -1,43 +1,68 @@
 const siteContent = {
-    hero: {
-        name: "Curtis Long",
-        title: "Freelance Photographer",
-        cta: "Gallery"
-    },
-    about: {
-        header: "About Me",
-        tagline: "I'm a photographer with a passion for travel and adventure",
-        description: `"<a href='https://en.wikipedia.org/wiki/Moon_River' target='_blank'>Moon River</a>" is an original composition for the screen, written by Henry Mancini and Johnny Mercer for Audrey Hepburn to sing in <em>Breakfast at Tiffany's</em>. Its significance is rooted in Mancini's childhood in the Southern United States. The opening stanza begins, "Moon River, wider than a mile. I'm crossing you in style, someday." I interpret the Moon River as both destiny and adventure. I like to think I'm adrift on the Moon River, letting the current take me to the next adventure. Here are some of my pictures from along the way.`
-    },
-    gallery: {
-        header: "Gallery",
-        images: [
-            "img/gallery/gallery-01.jpg",
-            "img/gallery/gallery-02.jpg",
-            "img/gallery/gallery-03.jpg",
-            "img/gallery/gallery-04.jpg",
-            "img/gallery/gallery-05.jpg",
-            "img/gallery/gallery-06.jpg",
-            "img/gallery/gallery-07.jpg",
-            "img/gallery/gallery-08.jpg",
-            "img/gallery/gallery-09.jpg"
-        ]
-    },
-    contact: {
-        header: "Contact Me",
-        text: "I love to connect with like-minded people&ndash;whether you're a fellow drifter or not, let's chat!",
-        email: "someone@example.com",
-        emailSubject: "Hello again",
-        cta: "Contact",
-        social: [
-            {
-                platform: "Instagram",
-                url: "http://www.instagram.com/curtislong/",
-                icon: "img/icons/instagram.svg"
-            }
-        ]
-    },
-    footer: {
-        copyright: "Curtis Long"
-    }
+  hero: {
+    name: "Curtis Long",
+    title: "Creative Technologist | Narrative Builder | Systems Mind",
+    cta: "Work & Craft"
+  },
+  about: {
+    header: "I Build Things",
+    tagline: "Stories, tools, teams, and sometimes boats.<br>My work sits in the place where imagination meets whatever the world gives you.",
+    description: `
+      <div class="work-pillar">
+        <h4>Early-Stage Projects & Systems</h4>
+        <p>I’m an early investor and early operator at ProGen.<br>I move between project management, systems design, operations, and creative tooling. I help small teams take the chaotic beginning of an idea and turn it into something that can actually ship.</p>
+      </div>
+      
+      <div class="work-pillar">
+        <h4>Story & Worldmaking</h4>
+        <p>I’m writing <em>Love Letters from the Apocalypse</em>, a long-form speculative fiction project about human beings who keep moving even when the world is cracked around them. It blends narrative, worldbuilding, and a sense of cinematic ruin and wonder.</p>
+      </div>
+
+      <div class="work-pillar">
+        <h4>Creative Technology</h4>
+        <p>I like when technology feels a little haunted by the human hand. I work with generative imagery, prompt design, and AI-driven creative exploration as tools to help bring human ideas to life.</p>
+      </div>
+
+      <div class="work-pillar">
+        <h4>Craft & Making</h4>
+        <p>Outside of tech and writing, I’ve been refitting a 1970s yawl and doing the carpentry myself.<br>Undoing fifty seasons of weather and wear reminds me that what’s worth keeping is rarely pristine, only repaired.</p>
+      </div>
+
+      <div class="interests-section">
+        <h4>What I’m Interested In</h4>
+        <ul class="interests-list">
+          <li>Tools that help people make things</li>
+          <li>Narrative design and emotional architecture</li>
+          <li>Systems that make difficult things easier</li>
+          <li>Collaboration that feels honest, flawed, and alive</li>
+        </ul>
+      </div>
+`
+  },
+  gallery: {
+    header: "Visuals & Artifacts",
+    images: [
+      "img/gallery/gallery-01.jpg",
+      "img/gallery/gallery-02.jpg",
+      "img/gallery/gallery-03.jpg",
+      "img/gallery/gallery-04.jpg",
+      "img/gallery/gallery-05.jpg",
+      "img/gallery/gallery-06.jpg",
+      "img/gallery/gallery-07.jpg",
+      "img/gallery/gallery-08.jpg",
+      "img/gallery/gallery-09.jpg"
+    ]
+  },
+  contact: {
+    header: "Contact",
+    text: "If you’re working on something meaningful, a product, a story, or an idea held together by tape and hope, I’d like to hear about it.",
+    email: "someone@example.com",
+    emailSubject: "Building something meaningful",
+    cta: "Get in Touch",
+    ctaUrl: "https://www.linkedin.com/in/curtislong/",
+    social: []
+  },
+  footer: {
+    copyright: "Curtis Long"
+  }
 };

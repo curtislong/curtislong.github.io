@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const contactBtn = document.getElementById('contact-btn');
     contactBtn.textContent = siteContent.contact.cta;
-    contactBtn.href = `mailto:${siteContent.contact.email}?Subject=${encodeURIComponent(siteContent.contact.emailSubject)}`;
+    contactBtn.href = siteContent.contact.ctaUrl;
 
     const socialLinks = document.getElementById('social-links');
     siteContent.contact.social.forEach(social => {
