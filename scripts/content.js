@@ -6,7 +6,7 @@ const siteContent = {
   },
   about: {
     header: "I Build Things",
-    tagline: "Stories, tools, teams, and sometimes boats.<br>My work sits in the place where imagination meets whatever the world gives you.",
+    tagline: "Stories, tools, teams, and sometimes boats.",
     description: `
       <div class="work-pillar">
         <h4>Early-Stage Projects & Systems</h4>
